@@ -1,1 +1,1 @@
-web: gunicorn konac:app
+web: gunicorn app:app
