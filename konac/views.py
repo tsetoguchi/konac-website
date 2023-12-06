@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django import forms
 from django.urls import reverse
-import json, os, requests
+import json, os
 
 # Comment Sections
 commentSectionflt = {
@@ -111,55 +111,55 @@ def index2(request):
         else:
             return render(request, "konac/error.html", {"message": "Invalid E-mail or Password!"})
 
-    if ('loggedin' in request.session) and (request.session['loggedin'] is True):
+    # if ('loggedin' in request.session) and (request.session['loggedin'] is True):
 
             # Submit a GET request to Youtube API
-        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+        # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
 
         # Check if request was successful
-        if res.status_code != 200:
-            raise Exception('ERROR: API request unsuccessful.')
+        # if res.status_code != 200:
+        #     raise Exception('ERROR: API request unsuccessful.')
 
         # Convert response to JSON
-        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+        # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
 
         # Parse response to python dictionary
-        parsed = json.loads(f'{json_data}')
+        # parsed = json.loads(f'{json_data}')
 
         # Get title and youtube video ID of newest release
-        title = str(parsed['items'][0]['snippet']['title'])
-        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-        videoURL = (f'https://www.youtube.com/embed/{id}')
-        context = {
-            'title': title,
-            'videoURL': videoURL
-        }
-        return render(request, "index2.html", context)
+        # title = str(parsed['items'][0]['snippet']['title'])
+        # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        # videoURL = (f'https://www.youtube.com/embed/{id}')
+        # context = {
+        #     'title': title,
+        #     'videoURL': videoURL
+        # }
+        # return render(request, "index2.html", context)
 
-    if request.method == 'GET':
+    # if request.method == 'GET':
 
-            # Submit a GET request to Youtube API
-        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+        # Submit a GET request to Youtube API
+        # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
 
         # Check if request was successful
-        if res.status_code != 200:
-            raise Exception('ERROR: API request unsuccessful.')
-
-        # Convert response to JSON
-        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
-
-        # Parse response to python dictionary
-        parsed = json.loads(f'{json_data}')
-
-        # Get title and youtube video ID of newest release
-        title = str(parsed['items'][0]['snippet']['title'])
-        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-        videoURL = (f'https://www.youtube.com/embed/{id}')
-        context = {
-            'title': title,
-            'videoURL': videoURL
-        }
-        return render(request, "index.html", context)
+        # if res.status_code != 200:
+        #     raise Exception('ERROR: API request unsuccessful.')
+        #
+        # # Convert response to JSON
+        # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+        #
+        # # Parse response to python dictionary
+        # parsed = json.loads(f'{json_data}')
+        #
+        # # Get title and youtube video ID of newest release
+        # title = str(parsed['items'][0]['snippet']['title'])
+        # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        # videoURL = (f'https://www.youtube.com/embed/{id}')
+        # context = {
+        #     'title': title,
+        #     'videoURL': videoURL
+        # }
+        # return render(request, "index.html", context)
 
 
 def music(request):
@@ -188,27 +188,27 @@ def logout(request):
     # Else render index
 
     # Submit a GET request to Youtube API
-    res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+    # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
 
     # Check if request was successful
-    if res.status_code != 200:
-        raise Exception('ERROR: API request unsuccessful.')
+    # if res.status_code != 200:
+    #     raise Exception('ERROR: API request unsuccessful.')
 
     # Convert response to JSON
-    json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+    # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
 
     # Parse response to python dictionary
-    parsed = json.loads(f'{json_data}')
+    # parsed = json.loads(f'{json_data}')
 
     # Get title and youtube video ID of newest release
-    title = str(parsed['items'][0]['snippet']['title'])
-    id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-    videoURL = (f'https://www.youtube.com/embed/{id}')
-    context = {
-        'title': title,
-        'videoURL': videoURL
-    }
-    return render(request, "index.html", context)
+    # title = str(parsed['items'][0]['snippet']['title'])
+    # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+    # videoURL = (f'https://www.youtube.com/embed/{id}')
+    # context = {
+    #     'title': title,
+    #     'videoURL': videoURL
+    # }
+    # return render(request, "index.html", context)
 
 
 def flutter(request):
@@ -266,29 +266,29 @@ def flutter(request):
         return render(request, "flutter.html", context)
 
     # If user is not logged in
-    else:
+    # else:
         # Submit a GET request to Youtube API
-        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+        # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
 
         # Check if request was successful
-        if res.status_code != 200:
-            raise Exception('ERROR: API request unsuccessful.')
-
-        # Convert response to JSON
-        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
-
-        # Parse response to python dictionary
-        parsed = json.loads(f'{json_data}')
-
-        # Get title and youtube video ID of newest release
-        title = str(parsed['items'][0]['snippet']['title'])
-        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-        videoURL = (f'https://www.youtube.com/embed/{id}')
-        context = {
-            'title': title,
-            'videoURL': videoURL
-        }
-        return render(request, "index.html", context)
+        # if res.status_code != 200:
+        #     raise Exception('ERROR: API request unsuccessful.')
+        #
+        # # Convert response to JSON
+        # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+        #
+        # # Parse response to python dictionary
+        # parsed = json.loads(f'{json_data}')
+        #
+        # # Get title and youtube video ID of newest release
+        # title = str(parsed['items'][0]['snippet']['title'])
+        # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        # videoURL = (f'https://www.youtube.com/embed/{id}')
+        # context = {
+        #     'title': title,
+        #     'videoURL': videoURL
+        # }
+        # return render(request, "index.html", context)
 
 
 def wontletgo(request):
@@ -346,29 +346,29 @@ def wontletgo(request):
         return render(request, "wontletgo.html", context)
 
     # If user is not logged in
-    else:
+    # else:
         # Submit a GET request to Youtube API
-        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
-
-        # Check if request was successful
-        if res.status_code != 200:
-            raise Exception('ERROR: API request unsuccessful.')
-
-        # Convert response to JSON
-        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
-
-        # Parse response to python dictionary
-        parsed = json.loads(f'{json_data}')
-
-        # Get title and youtube video ID of newest release
-        title = str(parsed['items'][0]['snippet']['title'])
-        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-        videoURL = (f'https://www.youtube.com/embed/{id}')
-        context = {
-            'title': title,
-            'videoURL': videoURL
-        }
-        return render(request, "index.html", context)
+        # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+        #
+        # # Check if request was successful
+        # if res.status_code != 200:
+        #     raise Exception('ERROR: API request unsuccessful.')
+        #
+        # # Convert response to JSON
+        # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+        #
+        # # Parse response to python dictionary
+        # parsed = json.loads(f'{json_data}')
+        #
+        # # Get title and youtube video ID of newest release
+        # title = str(parsed['items'][0]['snippet']['title'])
+        # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        # videoURL = (f'https://www.youtube.com/embed/{id}')
+        # context = {
+        #     'title': title,
+        #     'videoURL': videoURL
+        # }
+        # return render(request, "index.html", context)
 
 
 def away(request):
@@ -426,29 +426,29 @@ def away(request):
         return render(request, "away.html", context)
 
     # If user is not logged in
-    else:
+    # else:
         # Submit a GET request to Youtube API
-        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
-
-        # Check if request was successful
-        if res.status_code != 200:
-            raise Exception('ERROR: API request unsuccessful.')
-
-        # Convert response to JSON
-        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
-
-        # Parse response to python dictionary
-        parsed = json.loads(f'{json_data}')
-
-        # Get title and youtube video ID of newest release
-        title = str(parsed['items'][0]['snippet']['title'])
-        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-        videoURL = (f'https://www.youtube.com/embed/{id}')
-        context = {
-            'title': title,
-            'videoURL': videoURL
-        }
-        return render(request, "index.html", context)
+        # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+        #
+        # # Check if request was successful
+        # if res.status_code != 200:
+        #     raise Exception('ERROR: API request unsuccessful.')
+        #
+        # # Convert response to JSON
+        # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+        #
+        # # Parse response to python dictionary
+        # parsed = json.loads(f'{json_data}')
+        #
+        # # Get title and youtube video ID of newest release
+        # title = str(parsed['items'][0]['snippet']['title'])
+        # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        # videoURL = (f'https://www.youtube.com/embed/{id}')
+        # context = {
+        #     'title': title,
+        #     'videoURL': videoURL
+        # }
+        # return render(request, "index.html", context)
 
 
 def home(request):
@@ -506,26 +506,26 @@ def home(request):
         return render(request, "home.html", context)
 
     # If user is not logged in
-    else:
+    # else:
         # Submit a GET request to Youtube API
-        res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
-
-        # Check if request was successful
-        if res.status_code != 200:
-            raise Exception('ERROR: API request unsuccessful.')
-
-        # Convert response to JSON
-        json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
-
-        # Parse response to python dictionary
-        parsed = json.loads(f'{json_data}')
-
-        # Get title and youtube video ID of newest release
-        title = str(parsed['items'][0]['snippet']['title'])
-        id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-        videoURL = (f'https://www.youtube.com/embed/{id}')
-        context = {
-            'title': title,
-            'videoURL': videoURL
-        }
-        return render(request, "index.html", context)
+        # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+        #
+        # # Check if request was successful
+        # if res.status_code != 200:
+        #     raise Exception('ERROR: API request unsuccessful.')
+        #
+        # # Convert response to JSON
+        # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+        #
+        # # Parse response to python dictionary
+        # parsed = json.loads(f'{json_data}')
+        #
+        # # Get title and youtube video ID of newest release
+        # title = str(parsed['items'][0]['snippet']['title'])
+        # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+        # videoURL = (f'https://www.youtube.com/embed/{id}')
+        # context = {
+        #     'title': title,
+        #     'videoURL': videoURL
+        # }
+        # return render(request, "index.html", context)
