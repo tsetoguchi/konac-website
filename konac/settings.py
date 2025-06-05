@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!e(qgz&tz#%rorc#_uv6q)zkos*3frh^e(ovdcc+4%&&3ap6xz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["konac-336dd1107050.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR,'konac/static') ]
+STATICFILES_DIRS = [ os.path.join(BASE_DIR,'assets') ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
@@ -129,5 +129,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
-    BASE_DIR / "konac/static"
+    BASE_DIR / "konac" / "static",
 ]
