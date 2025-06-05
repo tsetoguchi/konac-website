@@ -148,6 +148,8 @@ a
 .fa-apple
 {
     scale: 1.3;
+    position: relative;
+    top: -3px;
 }
 
 .fa-youtube
@@ -305,6 +307,14 @@ p
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition:.5s;
+}
+
+.navbar-socials {
+    width: 50em;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10%;
+    gap: 10%;
 }
 
 .social-media-icons
