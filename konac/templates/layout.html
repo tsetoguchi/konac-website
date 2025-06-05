@@ -5,6 +5,8 @@
   <head>
         <title>{% block title %}{% endblock %}</title>
 
+        <meta charset="UTF-8">
+
         <!--Bootstrap CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -14,10 +16,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <!--Personal CSS-->
-        <link type="text/css" href="{% static 'konac/styles.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'konac/styles.css' %}">
 
         <!--Personal JavaScript-->
-        <script href="{% static 'konac/javascript.js' %}"></script>
+        <script src="{% static 'konac/javascript.js' %}"></script>
 
         <!--Font Awesome-->
         <script src="https://kit.fontawesome.com/a6d473fe20.js" crossorigin="anonymous"></script>

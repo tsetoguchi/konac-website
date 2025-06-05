@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!e(qgz&tz#%rorc#_uv6q)zkos*3frh^e(ovdcc+4%&&3ap6xz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["konac-336dd1107050.herokuapp.com"]
+ALLOWED_HOSTS = ["konac-336dd1107050.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
@@ -128,5 +128,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    BASE_DIR / "konac/static"
 ]
