@@ -29,95 +29,26 @@ commentSectionhome = {
 # Create your views here.
 
 def index(request):
-
-    # # Submit a GET request to Youtube API
-    # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
-
-    # # Check if request was successful
-    # if res.status_code != 200:
-    #     raise Exception('ERROR: API request unsuccessful.')
-
-    # # Convert response to JSON
-    # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
-
-    # # Parse response to python dictionary
-    # parsed = json.loads(f'{json_data}')
-
-    # # Get title and youtube video ID of newest release
-    # title = str(parsed['items'][0]['snippet']['title'])
-    # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-    # videoURL = (f'https://www.youtube.com/embed/{id}')
-    # context = {
-    #     'title': title,
-    #     'videoURL': videoURL
-    # }
-
-    # # If this is a POST request then process the Form data
-    # if request.method == 'POST':
-
-    #     # Create a form instance and populate it with data from the request (binding):
-    #     form = UserCreationForm(request.POST)
-
-    #     # Create a form instance and populate it with data from the request (binding):
-    #     email = (request.POST["email"])
-    #     password = (request.POST["password"])
-
-    #     try:
-    #         user = User.objects.get(username=email)
-    #         return render(request, "konac/error.html", {"message": "Email already exists!"})
-    #     except User.DoesNotExist:
-    #         user = User.objects.create_user(username=email, password=password)
-
-    #         # Submit a GET request to Youtube API
-    #         res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
-
-    #         # Check if request was successful
-    #         if res.status_code != 200:
-    #             raise Exception('ERROR: API request unsuccessful.')
-
-    #         # Convert response to JSON
-    #         json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
-
-    #         # Parse response to python dictionary
-    #         parsed = json.loads(f'{json_data}')
-
-    #         # Get title and youtube video ID of newest release
-    #         title = str(parsed['items'][0]['snippet']['title'])
-    #         id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
-    #         videoURL = (f'https://www.youtube.com/embed/{id}')
-    #         context = {
-    #             'title': title,
-    #             'videoURL': videoURL
-    #         }
-    #         return render(request, "konac/index.html", context)
-
-    # if user is logged in, redirect to index2
-    if ('loggedin' in request.session) and (request.session['loggedin'] is True):
-            return render(request, "index2.html")
-
-    # If GET request, return index
-    return render(request, "index.html")
-
-
-def index2(request):
-
-    # If this is a POST request then process the Form data
     if request.method == 'POST':
-
-        # Create a form instance and populate it with data from the request (binding):
-        form = UserCreationForm(request.POST)
-
-        # Create a form instance and populate it with data from the request (binding):
-        email = (request.POST["email"])
-        password = (request.POST["password"])
-
-        # Authenticate user
-        user = authenticate(username = email, password = password)
-        if user is not None:
-            request.session['loggedin'] = True
-            request.session['username'] = email
+        form = EmailSignupForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                # messages.success(request)
+                return redirect('index')  # or wherever you want
+            except:
+                messages.error(request)
         else:
-            return render(request, "konac/error.html", {"message": "Invalid E-mail or Password!"})
+            messages.error(request, 'Please enter a valid email.')
+    else:
+        form = EmailSignupForm()
+    
+    return render(request, 'index.html', {'form': form})
+
+
+def terms(request):
+
+    return render(request, "terms.html")
 
     # if ('loggedin' in request.session) and (request.session['loggedin'] is True):
 
@@ -179,27 +110,28 @@ def index2(request):
     # Else render music
     return render(request, "music.html")
 
-def email_signup(request):
-    if request.method == 'POST':
-        form = EmailSignupForm(request.POST)
-        if form.is_valid():
-            try:
-                form.save()
-                messages.success(request, 'Thanks for subscribing!')
-                return redirect('success_page')  # or wherever you want
-            except:
-                messages.error(request, 'This email is already subscribed.')
-        else:
-            messages.error(request, 'Please enter a valid email.')
-    else:
-        form = EmailSignupForm()
-    
-    return render(request, 'signup.html', {'form': form})
 
-def terms(request):
 
-    return render(request, "terms.html")
 
+# def index2(request):
+
+#     # If this is a POST request then process the Form data
+#     if request.method == 'POST':
+
+#         # Create a form instance and populate it with data from the request (binding):
+#         form = UserCreationForm(request.POST)
+
+#         # Create a form instance and populate it with data from the request (binding):
+#         email = (request.POST["email"])
+#         password = (request.POST["password"])
+
+#         # Authenticate user
+#         user = authenticate(username = email, password = password)
+#         if user is not None:
+#             request.session['loggedin'] = True
+#             request.session['username'] = email
+#         else:
+#             return render(request, "konac/error.html", {"message": "Invalid E-mail or Password!"})
 
 # def logout(request):
 
@@ -553,3 +485,75 @@ def terms(request):
 #         #     'videoURL': videoURL
 #         # }
 #         # return render(request, "index.html", context)
+
+
+# old index
+# def index(request):
+
+    # # Submit a GET request to Youtube API
+    # res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+
+    # # Check if request was successful
+    # if res.status_code != 200:
+    #     raise Exception('ERROR: API request unsuccessful.')
+
+    # # Convert response to JSON
+    # json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+
+    # # Parse response to python dictionary
+    # parsed = json.loads(f'{json_data}')
+
+    # # Get title and youtube video ID of newest release
+    # title = str(parsed['items'][0]['snippet']['title'])
+    # id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+    # videoURL = (f'https://www.youtube.com/embed/{id}')
+    # context = {
+    #     'title': title,
+    #     'videoURL': videoURL
+    # }
+
+    # # If this is a POST request then process the Form data
+    # if request.method == 'POST':
+
+    #     # Create a form instance and populate it with data from the request (binding):
+    #     form = UserCreationForm(request.POST)
+
+    #     # Create a form instance and populate it with data from the request (binding):
+    #     email = (request.POST["email"])
+    #     password = (request.POST["password"])
+
+    #     try:
+    #         user = User.objects.get(username=email)
+    #         return render(request, "konac/error.html", {"message": "Email already exists!"})
+    #     except User.DoesNotExist:
+    #         user = User.objects.create_user(username=email, password=password)
+
+    #         # Submit a GET request to Youtube API
+    #         res = requests.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=UUzAjvFPO5L8aEdHbb8DafeQ&key=AIzaSyDANFYwuTNW2FnqzK8ogc-QlRVB9EHy7G0')
+
+    #         # Check if request was successful
+    #         if res.status_code != 200:
+    #             raise Exception('ERROR: API request unsuccessful.')
+
+    #         # Convert response to JSON
+    #         json_data = json.dumps(res.json(), indent=4, separators=(',', ': '))
+
+    #         # Parse response to python dictionary
+    #         parsed = json.loads(f'{json_data}')
+
+    #         # Get title and youtube video ID of newest release
+    #         title = str(parsed['items'][0]['snippet']['title'])
+    #         id = str(parsed['items'][0]['snippet']['resourceId']['videoId'])
+    #         videoURL = (f'https://www.youtube.com/embed/{id}')
+    #         context = {
+    #             'title': title,
+    #             'videoURL': videoURL
+    #         }
+    #         return render(request, "konac/index.html", context)
+
+    # if user is logged in, redirect to index2
+    # if ('loggedin' in request.session) and (request.session['loggedin'] is True):
+    #         return render(request, "index2.html")
+
+    # If GET request, return index
+    # return render(request, "index.html")

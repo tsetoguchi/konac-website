@@ -31,7 +31,7 @@ and (-webkit-device-pixel-ratio : 3)
     {
         width: 0px !important;
         height: 0px !important;
-        
+        flex-direction: column;
     }
 
     #frontPageImage
@@ -125,11 +125,13 @@ and (max-device-width : 667px)
 
 html, body
 {
-    background-image: url( '/static/konac/images/sky.png' );
-    background-repeat:no-repeat;
+    background-image: url('/static/konac/images/tokyo.png');
+    background-repeat: no-repeat;
     background-color: #ededed;
-    background-size: 100% 100%;
-    height: 100%
+    background-size: cover;
+    background-position: center 50%;
+    height: 100%;
+    margin: 0;
 }
 
 a
@@ -293,29 +295,39 @@ p
     padding-left: 5%;
 }
 
-.navbar-brand
+#navBar {
+    background-color: 5c5744 !important;
+}
+
+.navbar-brand i
 {
+    color: white;
     font-size: 2em;
 }
 
-.navbar-brand:hover
+.navbar-brand:hover i
 {
-    color: #FFF1E8 !important;
+    color: #a59977 !important;
     font-size: 2em;
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
     -webkit-transition:.5s;
-    transition:.5s;
+    transition: 1s;
 }
 
 .navbar-socials {
+  
     width: 50em;
     display: flex;
     justify-content: flex-end;
     padding-right: 10%;
     gap: 10%;
 }
+
+/* .faIcons {
+    color: #ffffff;
+  } */
 
 .social-media-icons
 {
@@ -327,20 +339,28 @@ p
     padding-top: 1%;
 }
 
-#konac:hover
-{
-    color: black !important;
-}
 
 #konac
 {
     margin-right: 20em;
+    color: white;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: 1s;
+}
+
+#konac:hover
+{
+    color: #a59977 !important;
+
 }
 
 #lowNav
 {
     bottom:0px !important;
-    background-color: black !important;
+    background-color: transparent !important;
     position: fixed;
     width: 100%;
     flex: 0 0 auto;
@@ -351,14 +371,20 @@ p
 
 #terms, #contact
 {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 16px;
+    
 }
 
 #contact
 {
     float: right;
     padding-top: 5px;
+    font-weight: 400;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin-left: 70px;
+    padding-bottom: 20px;
+    margin: auto;
 }
 
 
@@ -406,6 +432,7 @@ p
 {
     color: white;
     font-size: 16px;
+    
 }
 
 .bottomText, #terms:hover
@@ -516,21 +543,108 @@ p
 
 #indexBox
 {
-    background-color: #282828;
+    background-color: rgba(75, 69, 42, 0.50);
     color:white;
     z-index: -100;
-    font-weight:bold;
+    font-weight: bold;
     margin:120px auto;
     height: 50%;
-    width: 50%;
-    opacity: 95%;
+    width: 40%;
+
+
+    /* 👇 Smooth edges */
+    border-radius: 20px;
+
+    /* 👇 Optional: soft shadow for more depth */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#indexSignup
+{
+    margin: auto;
+    text-align: center;
+    size: 80%;
+    scale: 1.5;
+}
+
+.indexText {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 20px;
+}
+
+input:focus {
+    outline: none;
+  }
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.subscribeText {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 350; 
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+}
+
+.nameInput, .emailInput
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.nameInput{
+    
+}
+
+.emailSubmit {
+    background: none;           
+    background-color: transparent; 
+    border: none;            
+    padding: 0;              
+    margin: 0;                
+    color: inherit;           
+    cursor: pointer;       
+    padding-top: 5%;
+    font-size: 20px;
+    font-weight: 300;    
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.emailSubmit:hover {
+    opacity: 0.7;          
+}
+
+/* Optional: Remove focus outline */
+.emailSubmit:focus {
+    outline: none;
 }
 
 #indexHeader
 {
-   display:inline;
+   display: inline;
    width:200px;
-   text-align:center;
+   text-align: center;
 }
 
 .youtubeVideo

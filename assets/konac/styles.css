@@ -1,0 +1,543 @@
+
+
+
+/* iPhone XR */
+/* 1792x828px at 326ppi */
+@media only screen 
+    and (device-width : 414px) 
+    and (device-height : 896px) 
+    and (-webkit-device-pixel-ratio : 2) 
+{ 
+
+    .faIcons
+    {
+        width: 70%;
+        height: 70%;
+    }
+
+
+
+
+}
+
+/*iPhone X*/
+/*http://www.stephen.io/mediaqueries/#iPhone*/
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3)
+{
+    #indexBox
+    {
+        width: 0px !important;
+        height: 0px !important;
+        
+    }
+
+    #frontPageImage
+    {
+        background-image: url( '/static/konac/images/memoji.jpg' );
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display:block;
+        margin:auto;
+    }
+
+    body
+    {
+        background-size: 100% 30%;
+    }
+
+    .youtubeVideo
+    {
+        position: relative;
+        top: 20% !important;
+    }
+    .music-caption
+    {
+        font-size: 1em !important;
+        padding-right: 80% !important;
+    }
+    .row
+    {
+        margin-top: 25% !important;
+    }
+    #logoutBtn, #regBtn, .indexHeader, #lowNav
+    {
+        display: none !important;
+    }
+    .navbar
+    {
+        padding: 0;
+    }
+}
+
+/*iPhone 6, 7, & 8 */
+/*http://www.stephen.io/mediaqueries/#iPhone*/
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+{
+    #indexBox
+    {
+        width: 0px !important;
+        height: 0px !important;
+    }
+
+    #frontPageImage
+    {
+        background-image: url( '/static/konac/images/memoji.jpg' );
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display:block;
+        margin:auto;
+    }
+    body
+    {
+        background-size: 100% 30%;
+    }
+    .youtubeVideo
+    {
+        position: relative;
+        top: 20% !important;
+    }
+    .music-caption
+    {
+        font-size: 1em !important;
+        padding-right: 80% !important;
+    }
+    .row
+    {
+        margin-top: 25% !important;
+    }
+    #logoutBtn, #regBtn, .indexHeader, #lowNav
+    {
+        display: none !important;
+    }
+    .navbar
+    {
+        padding: 0;
+    }
+}
+
+
+html, body
+{
+    background-image: url( '/static/konac/images/sky.png' );
+    background-repeat:no-repeat;
+    background-color: #ededed;
+    background-size: 100% 100%;
+    height: 100%
+}
+
+a
+{
+    margin: 0 0.2rem;
+}
+
+.fp-text
+{
+    position: relative;
+    top: 200px;
+    /* font-size: 25px; */
+    z-index: -1;
+}
+
+.fa-apple
+{
+    scale: 1.3;
+    position: relative;
+    top: -3px;
+}
+
+.fa-youtube
+{
+    scale: 1.2;
+}
+
+
+#frontPageImage
+{
+    background-image: url( '/static/konac/images/memoji.jpg' );
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 20%;
+    display: flex;
+    justify-content: center;
+    margin-top: -50px; 
+}
+
+#frontPageImage:hover
+{
+    opacity: 0.0;
+    color: white;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+#frontPageText
+{
+    text-align: center;
+    padding-top: 20%;
+    vertical-align: middle;
+    position: relative;
+    z-index: 990;
+}
+
+img
+{
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+}
+
+img:hover
+{
+    opacity: 0.3;
+    color: white;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+audio
+{
+
+    bottom: 20%;
+}
+
+a
+{
+    text-decoration: none !important;
+}
+
+.form-control
+{
+    width: 60%;
+}
+
+.modal-content
+{
+    margin-top: 50%;
+}
+
+.music-caption
+{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 2em;
+    color: black;
+    width: 300px;
+}
+
+.music-caption:hover
+{
+    color: white !important;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+.container
+{
+    padding-top: 2%;
+    padding-bottom: 10%;
+    width: 60%;
+}
+
+p
+{
+    width: 86%;
+}
+
+.errorMessage, .altHeader, .indexHeader
+{
+    padding-top: 5%;
+    text-align: center;
+    font-family: "Arial","sans-serif";
+}
+
+.altHeader
+{
+    margin-top: 15%;
+    color: white;
+}
+
+
+.btn-primary, .btn-info
+{
+    color: black;
+    background-color: #f8f9fa !important;
+    border-color: #f8f9fa !important;
+    font-size: 1.25rem;
+}
+
+.konac
+{
+    letter-spacing: -1px;
+    padding-left: 5%;
+}
+
+.navbar-brand
+{
+    font-size: 2em;
+}
+
+.navbar-brand:hover
+{
+    color: #FFF1E8 !important;
+    font-size: 2em;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+.navbar-socials {
+    width: 50em;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10%;
+    gap: 10%;
+}
+
+.social-media-icons
+{
+    margin-right: 8%;
+}
+
+#music
+{
+    padding-top: 1%;
+}
+
+#konac:hover
+{
+    color: black !important;
+}
+
+#konac
+{
+    margin-right: 20em;
+}
+
+#lowNav
+{
+    bottom:0px !important;
+    background-color: black !important;
+    position: fixed;
+    width: 100%;
+    flex: 0 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+#terms, #contact
+{
+    color: white;
+    font-size: 16px;
+}
+
+#contact
+{
+    float: right;
+    padding-top: 5px;
+}
+
+
+#terms
+{
+    float: left;
+}
+
+#termsBackground, .divBox
+{
+    background-color: #282828;
+    width: 50%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8%;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: 16px;
+    font-family: "Arial","sans-serif";
+    /* margin:120px auto; */
+
+}
+
+#termsText {
+    color: white;
+    padding-left: 15%;
+}
+
+#logoutBtn
+{
+    padding-bottom: 15px;
+}
+
+.navbar-header
+{
+    width:200px;
+    margin-left:8.3333% !important;
+}
+
+.bottomText
+{
+    color: white;
+    font-size: 16px;
+}
+
+.bottomText, #terms:hover
+{
+    color: #FFF1E8;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    75% {
+        opacity: 0;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    100% {
+        opacity: 0;
+        height: 0px;
+        line-height: 0px;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#vol-control
+{
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#vol-control
+{
+    animation-name: fade-in;
+}
+
+#flutterBig
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#flutterBig:hover
+{
+    opacity: 1;
+}
+
+.form-control
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.btn-primary
+{
+    float: right;
+}
+
+.form-group
+{
+    text-align: center;
+    font-size: 2em;
+}
+
+.commentHeader
+{
+    margin-right: 37%;
+    float: left;
+}
+
+.pre-scrollable
+{
+    margin-left: auto;
+    width: 50%;
+    margin-right: auto;
+    margin-top: auto;
+    background-color: white;
+}
+
+.commentDiv
+{
+    background-color: white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#indexBox
+{
+    background-color: #282828;
+    color:white;
+    z-index: -100;
+    font-weight:bold;
+    margin:120px auto;
+    height: 50%;
+    width: 50%;
+    opacity: 95%;
+}
+
+#indexHeader
+{
+   display:inline;
+   width:200px;
+   text-align:center;
+}
+
+.youtubeVideo
+{
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

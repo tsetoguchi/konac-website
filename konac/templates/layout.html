@@ -16,7 +16,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <!--Personal CSS-->
-        <link rel="stylesheet" type="text/css" href="{% static 'konac/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'konac/styles.css' %}">
 
         <!--Personal JavaScript-->
         <script src="{% static 'konac/javascript.js' %}"></script>
@@ -27,7 +27,7 @@
   </head>
   <body>
 
-        <nav id="navBar" class="navbar navbar-light bg-light">
+        <nav id="navBar" class="navbar navbar-light ">
 
           <a class="navbar-brand" id="konac" href="{% url 'index' %}">
               <h1 class="konac">
@@ -49,13 +49,13 @@
             <a class="navbar-brand social-media-icons px-sm-1" href="https://www.instagram.com/konacmusic">
               <i class="fa-brands fa-instagram faIcons"></i>
             </a>
+
+            <a class="navbar-brand social-media-icons px-sm-1" href="https://www.tiktok.com/@konacmusic">
+              <i class="fa-brands fa-tiktok faIcons"></i>
+            </a>
             
             <a class="navbar-brand social-media-icons px-sm-1" href="https://twitter.com/konac_">
               <i class="fa-brands fa-x-twitter faIcons"></i>
-            </a>
-            
-            <a class="navbar-brand social-media-icons px-sm-1" href="https://www.tiktok.com/@konacmusic">
-              <i class="fa-brands fa-tiktok faIcons"></i>
             </a>
             
             <a class="navbar-brand social-media-icons px-sm-1" href="https://www.youtube.com/c/konac">

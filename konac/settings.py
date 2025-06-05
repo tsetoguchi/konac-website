@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!e(qgz&tz#%rorc#_uv6q)zkos*3frh^e(ovdcc+4%&&3ap6xz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'konac',
 ]
 
@@ -120,7 +121,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR,'assets') ]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  
+]
+
+# STATICFILES_DIRS = [ os.path.join(BASE_DIR,'assets') ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
@@ -128,6 +133,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATICFILES_DIRS = [
-    BASE_DIR / "konac" / "static",
-]
+
