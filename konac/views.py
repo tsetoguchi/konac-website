@@ -34,7 +34,7 @@ def index(request):
         if form.is_valid():
             try:
                 form.save()
-                # messages.success(request)
+                messages.success(request, "Thank you for signing up!")
                 return redirect('index')  # or wherever you want
             except:
                 messages.error(request)
