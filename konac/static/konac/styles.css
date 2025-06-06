@@ -559,12 +559,25 @@ p
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+iframe {
+    border: none;
+    /* margin: 0;
+    padding: 0; */
+    display: block;
+    margin: 0 auto;
+    
+}
+
 #indexSignup
 {
     margin: auto;
     text-align: center;
     size: 80%;
     scale: 1.5;
+}
+
+.emailSignup {
+    margin-top: 10%;
 }
 
 .indexText {
@@ -642,6 +655,7 @@ input:focus {
 }
 
 .emailSubmit {
+    
     background: none;           
     background-color: transparent; 
     border: none;            
