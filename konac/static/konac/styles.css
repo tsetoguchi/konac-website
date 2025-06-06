@@ -548,8 +548,8 @@ p
     z-index: -100;
     font-weight: bold;
     margin:120px auto;
-    height: 50%;
-    width: 40%;
+    height: 48%;
+    width: 45%;
 
 
     /* 👇 Smooth edges */
@@ -594,7 +594,32 @@ input:focus {
     text-align: center;
     padding-top: 20px;
     font-weight: 350; 
+    /* display: inline-block; */
+    position: relative;
+    text-decoration: none;
+    margin: auto;
 }
+
+.subscribeText::after {
+    content: '';
+    position: absolute;
+    width: 12%;
+    transform: scaleX(0);
+    border-radius: 5px;
+    height: 0.05em;
+    bottom: 0;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%) scaleX(0); 
+    background: currentcolor;
+    transform-origin: left;
+    transition: transform 0.25s ease-out;
+}
+
+.subscribeText:hover::after {
+    transform: translateX(-50%) scaleX(1);
+    transform-origin: left;
+}
+
 
 .signupForm {
     display: flex;
