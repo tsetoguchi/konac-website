@@ -292,7 +292,10 @@ p
 .konac
 {
     letter-spacing: -1px;
-    padding-left: 5%;
+    padding-left: 40%;
+    font-size: 50px;
+    letter-spacing: 5px;
+    padding-top: 20%;
 }
 
 #navBar {
@@ -317,12 +320,12 @@ p
 }
 
 .navbar-socials {
-  
+    padding-top: 2%;
     width: 50em;
     display: flex;
     justify-content: flex-end;
-    padding-right: 10%;
-    gap: 10%;
+    padding-right: 2%;
+    gap: 4%;
 }
 
 /* .faIcons {
@@ -559,7 +562,7 @@ p
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-iframe {
+.youtube-video {
     border: none;
     /* margin: 0;
     padding: 0; */
