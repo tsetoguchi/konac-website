@@ -581,7 +581,7 @@ p
 }
 
 .emailSignup {
-    margin-top: 10%;
+
 }
 
 .indexText {
@@ -644,14 +644,14 @@ input:focus {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 30px;
+    padding: 30px; 
 }
 
 .nameInput, .emailInput
 {
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 30%;
 }
 
 .nameInput{
@@ -659,26 +659,29 @@ input:focus {
 }
 
 .emailSubmit {
-    
     background: none;           
     background-color: transparent; 
     border: none;            
-    padding: 0;              
+    padding: 5px 8px;  /* Minimal padding for clickability */             
     margin: 0;                
     color: inherit;           
     cursor: pointer;       
-    padding-top: 5%;
+    margin-top: 10px;  /* Use margin instead of percentage padding */
     font-size: 20px;
     font-weight: 300;    
     text-decoration: underline;
     transition: opacity 0.3s ease;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3) !important;
 }
+
+
 
 .emailSubmit:hover {
     opacity: 0.7;          
 }
 
-/* Optional: Remove focus outline */
+
 .emailSubmit:focus {
     outline: none;
 }
@@ -686,7 +689,7 @@ input:focus {
 #indexHeader
 {
    display: inline;
-   width:200px;
+   width: 200px;
    text-align: center;
 }
 

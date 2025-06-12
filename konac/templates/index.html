@@ -18,29 +18,31 @@ Konac | Official Site
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe> -->
 
-            <div class="emailSignup">
-                <h3 class="subscribeText">Subscribe</h3>
-                <form class="signupForm" id="email-signup-form" method="post">
-                    {% csrf_token %}
-                
-                    {{ form.email }}
-                    
-                    {{ form.name }}
-                
-                    <button class="emailSubmit" id="email-submit-btn" type="submit">Submit</button>
-                </form>
-                
-
-            
-                {% if messages %}
-                {% for message in messages %}
-                <div class="message">{{ message }}</div>
-                {% endfor %}
-                {% endif %}      
-            </div>
+           
 
 
     </div>
+
+     <div class="emailSignup">
+            <h3 class="subscribeText">Follow along</h3>
+            <form class="signupForm" id="email-signup-form" method="post">
+                {% csrf_token %}
+            
+                {{ form.email }}
+                
+                {{ form.name }}
+            
+                <button class="emailSubmit" id="email-submit-btn" type="submit">Submit</button>
+            </form>
+            
+
+        
+            {% if messages %}
+            {% for message in messages %}
+            <div class="message">{{ message }}</div>
+            {% endfor %}
+            {% endif %}      
+        </div>
         <!-- <h1 class="indexHeader">
             {{ title }}
         </h1>
