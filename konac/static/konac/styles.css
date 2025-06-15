@@ -1,137 +1,15 @@
-
-
-
-/* iPhone XR */
-/* 1792x828px at 326ppi */
-@media only screen 
-    and (device-width : 414px) 
-    and (device-height : 896px) 
-    and (-webkit-device-pixel-ratio : 2) 
-{ 
-
-    .faIcons
-    {
-        width: 70%;
-        height: 70%;
-    }
-
-
-
-
-}
-
-/*iPhone X*/
-/*http://www.stephen.io/mediaqueries/#iPhone*/
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3)
-{
-    #indexBox
-    {
-        width: 0px !important;
-        height: 0px !important;
-        flex-direction: column;
-    }
-
-    #frontPageImage
-    {
-        background-image: url( '/static/konac/images/memoji.jpg' );
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display:block;
-        margin:auto;
-    }
-
-    body
-    {
-        background-size: 100% 30%;
-    }
-
-    .youtubeVideo
-    {
-        position: relative;
-        top: 20% !important;
-    }
-    .music-caption
-    {
-        font-size: 1em !important;
-        padding-right: 80% !important;
-    }
-    .row
-    {
-        margin-top: 25% !important;
-    }
-    #logoutBtn, #regBtn, .indexHeader, #lowNav
-    {
-        display: none !important;
-    }
-    .navbar
-    {
-        padding: 0;
-    }
-}
-
-/*iPhone 6, 7, & 8 */
-/*http://www.stephen.io/mediaqueries/#iPhone*/
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 667px)
-{
-    #indexBox
-    {
-        width: 0px !important;
-        height: 0px !important;
-    }
-
-    #frontPageImage
-    {
-        background-image: url( '/static/konac/images/memoji.jpg' );
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display:block;
-        margin:auto;
-    }
-    body
-    {
-        background-size: 100% 30%;
-    }
-    .youtubeVideo
-    {
-        position: relative;
-        top: 20% !important;
-    }
-    .music-caption
-    {
-        font-size: 1em !important;
-        padding-right: 80% !important;
-    }
-    .row
-    {
-        margin-top: 25% !important;
-    }
-    #logoutBtn, #regBtn, .indexHeader, #lowNav
-    {
-        display: none !important;
-    }
-    .navbar
-    {
-        padding: 0;
-    }
-}
-
-
 html, body
 {
     background-image: url('/static/konac/images/tokyo.png');
     background-repeat: no-repeat;
     background-color: #ededed;
-    background-size: cover;
-    background-position: center 50%;
-    height: 100%;
+    background-size: auto; /* Keep original image dimensions */
+    background-position: center 90%;
+
+    height: 200vh;
     margin: 0;
+    padding: 0;
+
 }
 
 a
@@ -139,13 +17,11 @@ a
     margin: 0 0.2rem;
 }
 
-.fp-text
+/* .fp-text
 {
     position: relative;
     top: 200px;
-    /* font-size: 25px; */
-    z-index: -1;
-}
+} */
 
 .fa-apple
 {
@@ -166,7 +42,7 @@ a
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding-left: 20%;
     display: flex;
     justify-content: center;
@@ -545,31 +421,67 @@ p
     margin-right: auto;
 }
 
-#indexBox
-{
+#indexBox {
     background-color: rgba(75, 69, 42, 0.50);
-    color:white;
-    z-index: -100;
+    color: white;
+    /* z-index: -100; */
     font-weight: bold;
-    margin:120px auto;
-    height: 48%;
+    margin: 120px auto;
+    height: 48vh; 
     width: 45%;
-
-
-    /* 👇 Smooth edges */
     border-radius: 20px;
-
-    /* 👇 Optional: soft shadow for more depth */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.youtube-video {
+.indexText {
+    color: white;
+    font-size: 4em;
+    text-align: center;
+    padding-top: 22%;
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.youtubeVideo {
     border: none;
     /* margin: 0;
     padding: 0; */
     display: block;
-    margin: 0 auto;
+    margin: -1% auto;
     
+}
+
+.audioPlayer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#playPauseBtn {
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.downArrow
+{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    scale: 1.3;
+}
+
+.downArrow:hover
+{
+    color: #a59977 !important;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    opacity: 0.7;
+    transition: 1s;
 }
 
 #indexSignup
@@ -582,18 +494,18 @@ p
 
 .emailSignup {
 
+    margin-top: 30%;
+    /* margin-bottom: 10%; */
+    display: flex;
+    flex-direction: column;
+
 }
 
-.indexText {
-    color: white;
-    font-size: 1.5em;
-    text-align: center;
-    pauding-top: 20px;
-}
+
 
 input:focus {
     outline: none;
-  }
+}
 
 .form-input {
     width: 100%;
@@ -620,11 +532,11 @@ input:focus {
 .subscribeText::after {
     content: '';
     position: absolute;
-    width: 12%;
+    width: 110%;
     transform: scaleX(0);
     border-radius: 5px;
-    height: 0.05em;
-    bottom: 0;
+    height: 0.08em;
+    bottom: -7px;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%) scaleX(0); 
     background: currentcolor;
@@ -661,21 +573,19 @@ input:focus {
 .emailSubmit {
     background: none;           
     background-color: transparent; 
-    border: none;            
-    padding: 5px 8px;  /* Minimal padding for clickability */             
-    margin: 0;                
-    color: inherit;           
-    cursor: pointer;       
-    margin-top: 10px;  /* Use margin instead of percentage padding */
-    font-size: 20px;
+    border: none;        
+    padding: 30px 50px;    
+    margin-bottom: 40px;       
+    /* margin: 0;                 */
+    color: inherit;
+    cursor: pointer;
+    text-align: center;
+    font-size: 22px;
     font-weight: 300;    
     text-decoration: underline;
     transition: opacity 0.3s ease;
     color: white;
-    border: 1px solid rgba(255,255,255,0.3) !important;
 }
-
-
 
 .emailSubmit:hover {
     opacity: 0.7;          
@@ -715,7 +625,7 @@ input:focus {
 }
 
 
-.youtubeVideo
+.youtubeVideoOld
 {
     position: absolute;
     margin: auto;
@@ -723,3 +633,124 @@ input:focus {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* @media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+{
+    #indexBox
+    {
+        width: 0px !important;
+        height: 0px !important;
+    }
+
+    #frontPageImage
+    {
+        background-image: url( '/static/konac/images/memoji.jpg' );
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display:block;
+        margin:auto;
+    }
+    body
+    {
+        background-size: 100% 30%;
+    }
+    .youtubeVideo
+    {
+        position: relative;
+        top: 20% !important;
+    }
+    .music-caption
+    {
+        font-size: 1em !important;
+        padding-right: 80% !important;
+    }
+    .row
+    {
+        margin-top: 25% !important;
+    }
+    #logoutBtn, #regBtn, .indexHeader, #lowNav
+    {
+        display: none !important;
+    }
+    .navbar
+    {
+        padding: 0;
+    }
+}
+
+/*iPhone X*/
+/*http://www.stephen.io/mediaqueries/#iPhone*/
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3)
+{
+    #indexBox
+    {
+        width: 0px !important;
+        height: 0px !important;
+        flex-direction: column;
+    }
+
+    #frontPageImage
+    {
+        background-image: url( '/static/konac/images/memoji.jpg' );
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display:block;
+        margin:auto;
+
+    }
+
+    body
+    {
+        background-size: 100% 30%;
+        
+    }
+
+    .youtubeVideo
+    {
+        position: relative;
+        top: 20% !important;
+    }
+    .music-caption
+    {
+        font-size: 1em !important;
+        padding-right: 80% !important;
+    }
+    .row
+    {
+        margin-top: 25% !important;
+    }
+    #logoutBtn, #regBtn, .indexHeader, #lowNav
+    {
+        display: none !important;
+    }
+    .navbar
+    {
+        padding: 0;
+    }
+}
+
+/* iPhone XR */
+/* 1792x828px at 326ppi */
+@media only screen 
+    and (device-width : 414px) 
+    and (device-height : 896px) 
+    and (-webkit-device-pixel-ratio : 2) 
+{ 
+
+    .faIcons
+    {
+        width: 70%;
+        height: 70%;
+    }
+
+
+
+
+} */
