@@ -678,7 +678,15 @@ input:focus {
         background-color: #ededed;
         background-size: auto;
     }
-    
+
+    .navbar-brand {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap; /* Prevents text from wrapping */
+        text-overflow: ellipsis; /* Optional: shows '...' if it's too long */
+        display: inline-block;
+      }
+
     #navBar {
         width: 100%;
         margin: 0;
@@ -704,20 +712,10 @@ input:focus {
         font-size: 25px;
         text-align: center;
         width: 100%;
-        margin: 0; 
+ 
         outline: 1px solid;
 
     }
-
-
-    
-    #konac {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-
 
 
     #indexBox {
